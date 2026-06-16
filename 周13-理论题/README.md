@@ -180,4 +180,150 @@ return 0;
 
 ---
 
-> 共 10 题 | 来源：Matrix 程序设计Ⅱ
+### 第11题 - 单选题
+
+下列关于函数重载的说法，正确的是：
+
+- **A.** 函数重载要求函数名不同，但参数列表相同
+- **B.** 函数重载要求函数名相同，但参数列表不同
+- **C.** 函数重载只能发生在基类和派生类之间
+- **D.** 函数重载必须依靠 virtual 关键字实现
+
+> **标准答案：B**
+
+---
+
+### 第12题 - 单选题
+
+下列哪一组函数声明可以构成函数重载？
+
+- **A.** void fun(int x); 和 int fun(int x);
+- **B.** void fun(int x); 和 void fun(double x);
+- **C.** void fun(int x); 和 void fun(int y);
+- **D.** int fun(); 和 int fun();
+
+> **标准答案：B**
+
+---
+
+### 第13题 - 单选题
+
+关于函数重载和函数覆盖，下列说法正确的是：
+
+- **A.** 函数重载通常发生在同一作用域中，函数覆盖通常发生在基类和派生类之间
+- **B.** 函数重载必须使用 virtual 关键字，函数覆盖不需要使用 virtual 关键字
+- **C.** 函数覆盖要求函数名相同即可，参数列表可以不同
+- **D.** 函数重载属于运行时多态，函数覆盖属于编译时多态
+
+> **标准答案：A**
+
+---
+
+### 第14题 - 单选题
+
+如果派生类中定义了一个与基类虚函数同名，但参数列表不同的成员函数，下列说法正确的是：
+
+- **A.** 该函数一定正确覆盖了基类虚函数
+- **B.** 该函数不会覆盖基类中参数列表不同的虚函数
+- **C.** 该函数会使基类虚函数自动变成非虚函数
+- **D.** 该函数一定会导致程序运行时错误
+
+> **标准答案：B**
+
+---
+
+### 第15题 - 单选题
+
+下列代码的输出结果是：
+#include <iostream>
+using namespace std;
+class Base { public: virtual void print() { cout << "Base"; } };
+class Derived : public Base { public: void print() { cout << "Derived"; } };
+int main() { Derived d; Base& r = d; r.print(); return 0; }
+
+- **A.** Base
+- **B.** Derived
+- **C.** BaseDerived
+- **D.** 编译错误
+
+> **标准答案：B**
+
+---
+
+### 第16题 - 单选题
+
+下列代码的输出结果是：
+#include <iostream>
+using namespace std;
+class Base { public: virtual void show() { cout << "Base"; } };
+class Derived : public Base { public: void show() { cout << "Derived"; } };
+int main() { Derived d; Base b = d; b.show(); return 0; }
+
+- **A.** Base
+- **B.** Derived
+- **C.** BaseDerived
+- **D.** 编译错误
+
+> **标准答案：A**
+
+---
+
+### 第17题 - 单选题
+
+下面代码中，Base b = d; 体现的现象是：
+(同上题代码)
+
+- **A.** 动态绑定
+- **B.** 对象切片
+- **C.** 函数重载
+- **D.** 向下转型
+
+> **标准答案：B**
+
+---
+
+### 第18题 - 单选题
+
+下列关于静态类型和动态类型的说法，正确的是：
+
+- **A.** 静态类型由变量声明决定，动态类型由对象实际所属类型决定
+- **B.** 静态类型只能在程序运行时确定
+- **C.** 动态类型一定与静态类型完全相同
+- **D.** 只有普通对象才有动态类型，指针和引用没有动态类型相关问题
+
+> **标准答案：A**
+
+---
+
+### 第19题 - 单选题
+
+下列代码的输出结果是：
+#include <iostream>
+using namespace std;
+class Base { public: virtual void f() { cout << "Base"; } };
+class Derived : public Base { public: void f(int x) { cout << "Derived"; } };
+int main() { Derived d; Base* p = &d; p->f(); return 0; }
+
+- **A.** Base
+- **B.** Derived
+- **C.** BaseDerived
+- **D.** 编译错误
+
+> **标准答案：A**
+
+---
+
+### 第20题 - 单选题
+
+关于 C++ 多态、虚函数和函数重载，下列说法正确的是：
+
+- **A.** 只要派生类中出现与基类同名的函数，就一定发生运行时多态
+- **B.** 函数重载主要根据返回值类型区分不同函数
+- **C.** 通过基类指针或引用调用虚函数时，可能根据对象的实际类型决定调用版本
+- **D.** 非虚函数也一定会根据对象的动态类型进行动态绑定
+
+> **标准答案：C**
+
+---
+
+> 共 20 题 | 来源：Matrix 程序设计Ⅱ
