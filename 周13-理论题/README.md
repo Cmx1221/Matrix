@@ -22,7 +22,6 @@
 > **标准答案：B**
 
 ---
-
 ### 第2题 - 单选题
 
 下列关于 C++ 多态的说法，正确的是：
@@ -35,7 +34,6 @@
 > **标准答案：B**
 
 ---
-
 ### 第3题 - 单选题
 
 在 C++ 中，将基类成员函数声明为 virtual 的主要意义是：
@@ -48,7 +46,6 @@
 > **标准答案：C**
 
 ---
-
 ### 第4题 - 单选题
 
 下列哪种情况最能体现 C++ 的运行时多态？
@@ -61,7 +58,6 @@
 > **标准答案：B**
 
 ---
-
 ### 第5题 - 单选题
 
 关于函数重载与运行时多态的关系，下列说法正确的是：
@@ -74,7 +70,6 @@
 > **标准答案：B**
 
 ---
-
 ### 第6题 - 单选题
 
 在 C++ 中，若希望通过基类指针调用函数时能够执行派生类中重写的版本，基类中的该函数通常应声明为：
@@ -87,7 +82,6 @@
 > **标准答案：B**
 
 ---
-
 ### 第7题 - 单选题
 
 下列关于虚函数的说法，正确的是：
@@ -100,10 +94,11 @@
 > **标准答案：C**
 
 ---
-
 ### 第8题 - 单选题
 
 下列代码的输出结果是：
+
+```cpp
 #include <iostream>
 using namespace std;
 class Base {
@@ -124,6 +119,7 @@ Base* p = &d;
 p->show();
 return 0;
 }
+```
 
 - **A.** Base
 - **B.** Derived
@@ -133,10 +129,11 @@ return 0;
 > **标准答案：B**
 
 ---
-
 ### 第9题 - 单选题
 
 下列代码的输出结果是：
+
+```cpp
 #include <iostream>
 using namespace std;
 class Base {
@@ -157,6 +154,7 @@ Base* p = &d;
 p->show();
 return 0;
 }
+```
 
 - **A.** Base
 - **B.** Derived
@@ -166,7 +164,6 @@ return 0;
 > **标准答案：A**
 
 ---
-
 ### 第10题 - 单选题
 
 在 C++ 中，使用基类指针或引用调用虚函数时，实际调用哪个函数版本主要取决于：
@@ -179,7 +176,6 @@ return 0;
 > **标准答案：C**
 
 ---
-
 ### 第11题 - 单选题
 
 下列关于函数重载的说法，正确的是：
@@ -192,7 +188,6 @@ return 0;
 > **标准答案：B**
 
 ---
-
 ### 第12题 - 单选题
 
 下列哪一组函数声明可以构成函数重载？
@@ -205,7 +200,6 @@ return 0;
 > **标准答案：B**
 
 ---
-
 ### 第13题 - 单选题
 
 关于函数重载和函数覆盖，下列说法正确的是：
@@ -218,7 +212,6 @@ return 0;
 > **标准答案：A**
 
 ---
-
 ### 第14题 - 单选题
 
 如果派生类中定义了一个与基类虚函数同名，但参数列表不同的成员函数，下列说法正确的是：
@@ -231,15 +224,17 @@ return 0;
 > **标准答案：B**
 
 ---
-
 ### 第15题 - 单选题
 
 下列代码的输出结果是：
+
+```cpp
 #include <iostream>
 using namespace std;
 class Base { public: virtual void print() { cout << "Base"; } };
 class Derived : public Base { public: void print() { cout << "Derived"; } };
 int main() { Derived d; Base& r = d; r.print(); return 0; }
+```
 
 - **A.** Base
 - **B.** Derived
@@ -249,15 +244,17 @@ int main() { Derived d; Base& r = d; r.print(); return 0; }
 > **标准答案：B**
 
 ---
-
 ### 第16题 - 单选题
 
 下列代码的输出结果是：
+
+```cpp
 #include <iostream>
 using namespace std;
 class Base { public: virtual void show() { cout << "Base"; } };
 class Derived : public Base { public: void show() { cout << "Derived"; } };
 int main() { Derived d; Base b = d; b.show(); return 0; }
+```
 
 - **A.** Base
 - **B.** Derived
@@ -267,7 +264,6 @@ int main() { Derived d; Base b = d; b.show(); return 0; }
 > **标准答案：A**
 
 ---
-
 ### 第17题 - 单选题
 
 下面代码中，Base b = d; 体现的现象是：
@@ -281,7 +277,6 @@ int main() { Derived d; Base b = d; b.show(); return 0; }
 > **标准答案：B**
 
 ---
-
 ### 第18题 - 单选题
 
 下列关于静态类型和动态类型的说法，正确的是：
@@ -294,15 +289,17 @@ int main() { Derived d; Base b = d; b.show(); return 0; }
 > **标准答案：A**
 
 ---
-
 ### 第19题 - 单选题
 
 下列代码的输出结果是：
+
+```cpp
 #include <iostream>
 using namespace std;
 class Base { public: virtual void f() { cout << "Base"; } };
 class Derived : public Base { public: void f(int x) { cout << "Derived"; } };
 int main() { Derived d; Base* p = &d; p->f(); return 0; }
+```
 
 - **A.** Base
 - **B.** Derived
@@ -312,7 +309,6 @@ int main() { Derived d; Base* p = &d; p->f(); return 0; }
 > **标准答案：A**
 
 ---
-
 ### 第20题 - 单选题
 
 关于 C++ 多态、虚函数和函数重载，下列说法正确的是：

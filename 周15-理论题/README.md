@@ -22,7 +22,6 @@
 > **标准答案：C**
 
 ---
-
 ### 第2题 - 单选题
 
 考虑以下函数模板声明：template <typename T> T foo(T a, T b);，在不考虑隐式类型转换的情况下，以下哪个调用会导致编译错误？
@@ -35,7 +34,6 @@
 > **标准答案：C**
 
 ---
-
 ### 第3题 - 单选题
 
 下列关于函数模板特化（Specialization）的说法中，正确的是？
@@ -48,10 +46,11 @@
 > **标准答案：C**
 
 ---
-
 ### 第4题 - 单选题
 
 观察以下代码片段，该程序在编译运行后的输出结果是？
+
+```cpp
 template <typename T>
 void print(T x) { std::cout << 1; }
 template <>
@@ -60,6 +59,7 @@ void print(int x) { std::cout << 3; }
 int main() {
 print(10);
 }
+```
 
 - **A.** 1
 - **B.** 2
@@ -69,7 +69,6 @@ print(10);
 > **标准答案：C**
 
 ---
-
 ### 第5题 - 单选题
 
 在类模板的定义中，下列关于成员函数外部实现的语法，正确的是？
@@ -82,7 +81,6 @@ print(10);
 > **标准答案：C**
 
 ---
-
 ### 第6题 - 单选题
 
 关于非类型模板形参（Non-type Template Parameters），下列说法正确的是？
@@ -95,7 +93,6 @@ print(10);
 > **标准答案：B**
 
 ---
-
 ### 第7题 - 单选题
 
 设有类模板定义：template <typename T, int N> class Array { ... };，以下哪组对象的类型在编译期被认为是完全相同的类型？
@@ -108,7 +105,6 @@ print(10);
 > **标准答案：C**
 
 ---
-
 ### 第8题 - 单选题
 
 函数模板可以重载。若同时存在普通非模板函数和同名的函数模板，在参数完美匹配的情况下，编译器的重载决议（Overload Resolution）策略是？
@@ -121,15 +117,17 @@ print(10);
 > **标准答案：A**
 
 ---
-
 ### 第9题 - 单选题
 
 考虑以下用于推导一维数组长度的函数模板：
+
+```cpp
 template <typename T, int N>
 void getLength(T (&arr)[N]) {
 std::cout << N;
 }
 对于定义 int a[10];，调用 getLength(a); 时，模板形参 T 和 N 分别被推导为什么？
+```
 
 - **A.** T 是 int*，N 是 10
 - **B.** T 是 int，N 是 10
@@ -139,7 +137,6 @@ std::cout << N;
 > **标准答案：B**
 
 ---
-
 ### 第10题 - 单选题
 
 如果将上题的函数签名修改为 template <typename T, int N> void getLength(T arr[N])，调用 getLength(a); 会发生什么？
@@ -152,7 +149,6 @@ std::cout << N;
 > **标准答案：C**
 
 ---
-
 ### 第11题 - 单选题
 
 观察以下关于类模板全特化的讨论，哪项陈述是错误的？
@@ -165,12 +161,14 @@ std::cout << N;
 > **标准答案：A**
 
 ---
-
 ### 第12题 - 单选题
 
 考虑以下代码，在编译时会发生什么情况？
+
+```cpp
 template <int Size> class Buffer { int data[Size]; };
 int main() { int n; std::cin >> n; Buffer<n> myBuf; }
+```
 
 - **A.** 编译成功，在运行期动态分配长度为 n 的静态数组
 - **B.** 编译失败，因为非类型模板实参 n 是运行期变量，不是编译期常量
@@ -180,7 +178,6 @@ int main() { int n; std::cin >> n; Buffer<n> myBuf; }
 > **标准答案：B**
 
 ---
-
 ### 第13题 - 单选题
 
 下列关于模板代码的头文件包含模式，说法最准确的是？
@@ -193,12 +190,14 @@ int main() { int n; std::cin >> n; Buffer<n> myBuf; }
 > **标准答案：B**
 
 ---
-
 ### 第14题 - 单选题
 
 观察以下关于二维数组引用的形参推导模板：
+
+```cpp
 template <typename T, int R, int C> void processMatrix(T (&matrix)[R][C]);
 已知 double mat[3][5];，调用 processMatrix(mat); 后，R 和 C 的值分别是？
+```
 
 - **A.** R = 5, C = 3
 - **B.** R = 3, C = 5
@@ -208,7 +207,6 @@ template <typename T, int R, int C> void processMatrix(T (&matrix)[R][C]);
 > **标准答案：B**
 
 ---
-
 ### 第15题 - 单选题
 
 下列哪种类型不能作为 C++11 标准下的非类型模板形参？
@@ -221,7 +219,6 @@ template <typename T, int R, int C> void processMatrix(T (&matrix)[R][C]);
 > **标准答案：C**
 
 ---
-
 ### 第16题 - 单选题
 
 在执行代码 template<typename T> void swap(T& a, T& b); 的显式实例化声明时，正确的语法是？
@@ -234,14 +231,16 @@ template <typename T, int R, int C> void processMatrix(T (&matrix)[R][C]);
 > **标准答案：B**
 
 ---
-
 ### 第17题 - 单选题
 
 观察下面这段带有偏序匹配陷阱的重载代码，执行 foo(5); 后的输出结果是？
+
+```cpp
 template <typename T> void foo(T x) { std::cout << "A"; }
 template <typename T> void foo(T* x) { std::cout << "B"; }
 template <> void foo(int x) { std::cout << "C"; }
 int main() { foo(5); }
+```
 
 - **A.** A
 - **B.** B
@@ -251,7 +250,6 @@ int main() { foo(5); }
 > **标准答案：C**
 
 ---
-
 ### 第18题 - 单选题
 
 接上题，如果我们在 main 函数中改为执行 int n = 10; foo(&n);，输出结果将变为？
@@ -264,7 +262,6 @@ int main() { foo(5); }
 > **标准答案：B**
 
 ---
-
 ### 第19题 - 单选题
 
 下列关于类模板内使用 typename 的说法，正确的是？
@@ -277,7 +274,6 @@ int main() { foo(5); }
 > **标准答案：B**
 
 ---
-
 ### 第20题 - 单选题
 
 设有模板声明：template <typename T, typename U> class Pair;。现在想要为两个参数类型相同（如都是 int，或都是 double）的情况编写专门的高效逻辑。在不使用类模板特化（超纲）的前提下，我们可以通过下列哪种方式通知编译器处理？

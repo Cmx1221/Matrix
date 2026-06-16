@@ -22,7 +22,6 @@
 > **标准答案：D**
 
 ---
-
 ### 第2题 - 单选题
 
 一个类可以有多少个析构函数
@@ -35,10 +34,11 @@
 > **标准答案：A**
 
 ---
-
 ### 第3题 - 单选题
 
 下列C++代码的输出是什么
+
+```cpp
 #include <iostream>
 using namespace std;
 class TEST {
@@ -50,6 +50,7 @@ cout << "In main()
 ";
 return 0;
 }
+```
 
 - **A.** In main()
 - **B.** In main()
@@ -59,10 +60,11 @@ return 0;
 > **标准答案：C**
 
 ---
-
 ### 第4题 - 单选题
 
 下列C++代码的输出是什么
+
+```cpp
 #include <iostream>
 using namespace std;
 class A{
@@ -83,6 +85,7 @@ int main() {
 A test;
 return 0;
 }
+```
 
 - **A.** A ~A
 - **B.** A
@@ -92,10 +95,11 @@ return 0;
 > **标准答案：D**
 
 ---
-
 ### 第5题 - 单选题
 
 下列C++代码的输出是什么
+
+```cpp
 #include <iostream>
 using namespace std;
 class A{
@@ -117,6 +121,7 @@ int main() {
 A test;
 return 0;
 }
+```
 
 - **A.** A1 ~A
 - **B.** A2 ~A
@@ -126,10 +131,11 @@ return 0;
 > **标准答案：D**
 
 ---
-
 ### 第6题 - 单选题
 
 下列C++代码的输出是什么
+
+```cpp
 #include <iostream>
 #include <string>
 using namespace std;
@@ -148,6 +154,7 @@ int main() {
 A a1("a1"), a2("a2");
 return 0;
 }
+```
 
 - **A.** A(a1) A(a2) ~A(a2) ~A(a1)
 - **B.** A(a1) A(a2) ~A(a1) ~A(a2)
@@ -157,10 +164,11 @@ return 0;
 > **标准答案：A**
 
 ---
-
 ### 第7题 - 单选题
 
 下列C++代码的输出是什么
+
+```cpp
 #include <iostream>
 using namespace std;
 class A{
@@ -180,6 +188,7 @@ A a1("a1");
 A a3("a3");
 return 0;
 }
+```
 
 - **A.** A(a1) A(a2) A(a3) ~A(a2) ~A(a3) ~A(a1)
 - **B.** A(a1) A(a2) ~A(a2) A(a3) ~A(a3) ~A(a1)
@@ -189,10 +198,11 @@ return 0;
 > **标准答案：B**
 
 ---
-
 ### 第8题 - 单选题
 
 下列C++代码的输出是什么
+
+```cpp
 #include <iostream>
 using namespace std;
 class A{
@@ -212,6 +222,7 @@ int main() {
 A a(2,2,2);
 return 0;
 }
+```
 
 - **A.** 000
 - **B.** 222
@@ -221,10 +232,11 @@ return 0;
 > **标准答案：C**
 
 ---
-
 ### 第9题 - 单选题
 
 下列C++代码的输出是什么
+
+```cpp
 #include <iostream>
 using namespace std;
 class A{
@@ -245,6 +257,7 @@ int main() {
 A a(2,2,2);
 return 0;
 }
+```
 
 - **A.** 221
 - **B.** 222
@@ -254,10 +267,11 @@ return 0;
 > **标准答案：B**
 
 ---
-
 ### 第10题 - 单选题
 
 下列C++代码的输出是什么
+
+```cpp
 #include <iostream>
 using namespace std;
 class A{
@@ -278,6 +292,7 @@ int main() {
 A a(3);
 return 0;
 }
+```
 
 - **A.** 111
 - **B.** 331
@@ -287,7 +302,6 @@ return 0;
 > **标准答案：D**
 
 ---
-
 ### 第11题 - 单选题
 
 以下关于构造函数的描述，错误的是？
@@ -300,7 +314,6 @@ return 0;
 > **标准答案：C**
 
 ---
-
 ### 第12题 - 单选题
 
 下面关于析构函数的说法，正确的是？
@@ -313,7 +326,6 @@ return 0;
 > **标准答案：C**
 
 ---
-
 ### 第13题 - 单选题
 
 下面哪个函数不能访问 this 指针？
@@ -326,7 +338,6 @@ return 0;
 > **标准答案：D**
 
 ---
-
 ### 第14题 - 单选题
 
 以下关于静态成员变量的描述，错误的是？
@@ -339,7 +350,6 @@ return 0;
 > **标准答案：A**
 
 ---
-
 ### 第15题 - 单选题
 
 类的构造函数的作用是什么？
@@ -352,15 +362,17 @@ return 0;
 > **标准答案：C**
 
 ---
-
 ### 第16题 - 单选题
 
 下列C++代码的输出是什么
+
+```cpp
 #include <iostream>
 using namespace std;
 class A { public: A() { cout << "A "; } ~A() { cout << "~A "; } };
 void func() { static A a; }
 int main() { func(); func(); return 0; }
+```
 
 - **A.** A ~A A ~A
 - **B.** A ~A
@@ -370,13 +382,15 @@ int main() { func(); func(); return 0; }
 > **标准答案：B**
 
 ---
-
 ### 第17题 - 单选题
 
 下列哪个选项是程序的输出：
+
+```cpp
 class CDummy { public: int isitme (CDummy& param); };
 int CDummy::isitme (CDummy& param) { if (&param == this) return true; else return false; }
 int main () { CDummy a; CDummy *b = &a; if (b->isitme(a)) { cout << "execute"; } else { cout<<"not execute"; } return 0; }
+```
 
 - **A.** "execute"
 - **B.** "not execute"
@@ -386,15 +400,17 @@ int main () { CDummy a; CDummy *b = &a; if (b->isitme(a)) { cout << "execute"; }
 > **标准答案：A**
 
 ---
-
 ### 第18题 - 单选题
 
 下列C++代码的输出是什么
+
+```cpp
 #include <iostream>
 using namespace std;
 class A { public: static int count; A() { count++; } ~A() { count--; } };
 int A::count = 0;
 int main() { A a1, a2; cout << A::count << endl; }
+```
 
 - **A.** 1
 - **B.** 2
@@ -404,10 +420,11 @@ int main() { A a1, a2; cout << A::count << endl; }
 > **标准答案：B**
 
 ---
-
 ### 第19题 - 单选题
 
 下列C++代码的输出是什么
+
+```cpp
 #include <iostream>
 using namespace std;
 class A {
@@ -417,6 +434,7 @@ A& setX(int x) { this->x = x * 2; return *this; }
 void print() const { cout << "x = " << this->x << endl; }
 };
 int main() { A obj1(5); A obj2(10); obj1.setX(obj2.x).setX(3); obj1.print(); obj2.print(); return 0; }
+```
 
 - **A.** x = 6 x = 10
 - **B.** x = 10 x = 10
@@ -426,10 +444,11 @@ int main() { A obj1(5); A obj2(10); obj1.setX(obj2.x).setX(3); obj1.print(); obj
 > **标准答案：A**
 
 ---
-
 ### 第20题 - 单选题
 
 下列C++代码的输出是什么（涉及静态成员和析构顺序的完整示例）
+
+```cpp
 #include <iostream>
 using namespace std;
 class MyClass {
@@ -442,6 +461,7 @@ static int getCount() { return count; }
 };
 int MyClass::count = 0;
 int main() { MyClass obj1(1); { MyClass obj2(2); obj2.showId(); } cout << "Total objects after block: " << MyClass::getCount() << endl; return 0; }
+```
 
 - **A.** Constructor: Object 1 created. Total objects: 1
 - **B.** (不同顺序)

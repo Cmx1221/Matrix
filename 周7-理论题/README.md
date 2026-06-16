@@ -22,10 +22,11 @@
 > **标准答案：C**
 
 ---
-
 ### 第2题 - 单选题
 
 有关下列代码说法正确的是
+
+```cpp
 #include <iostream>
 using namespace std;
 int main() {
@@ -34,6 +35,7 @@ int* q = p;
 delete p;
 return 0;
 }
+```
 
 - **A.** q会自动变为nullptr
 - **B.** 此时q仍然指向原地址值，但该地址已经失效
@@ -43,7 +45,6 @@ return 0;
 > **标准答案：B**
 
 ---
-
 ### 第3题 - 单选题
 
 关于构造函数的成员初始化列表，下列说法正确的是
@@ -56,7 +57,6 @@ return 0;
 > **标准答案：C**
 
 ---
-
 ### 第4题 - 单选题
 
 设有如下定义：
@@ -73,7 +73,6 @@ int* const p2 = &a;
 > **标准答案：B**
 
 ---
-
 ### 第5题 - 单选题
 
 关于普通类对象在内存中的组成，下列说法正确的是
@@ -86,10 +85,11 @@ int* const p2 = &a;
 > **标准答案：C**
 
 ---
-
 ### 第6题 - 单选题
 
 下列代码的输出结果是
+
+```cpp
 #include <iostream>
 using namespace std;
 class Test {
@@ -103,6 +103,7 @@ Test* p = new Test;
 delete p;
 return 0;
 }
+```
 
 - **A.** C D C D
 - **B.** C C D D
@@ -112,7 +113,6 @@ return 0;
 > **标准答案：B**
 
 ---
-
 ### 第7题 - 单选题
 
 关于拷贝构造函数，下列说法正确的是
@@ -125,10 +125,11 @@ return 0;
 > **标准答案：B**
 
 ---
-
 ### 第8题 - 单选题
 
 有关下列代码的说法正确的是：
+
+```cpp
 #include <iostream>
 using namespace std;
 class A {
@@ -139,6 +140,7 @@ A() {
 x = 10;
 }
 };
+```
 
 - **A.** 代码可以正常编译，因为const成员可以先定义再在构造函数体内赋值
 - **B.** 代码不能通过编译，因为const数据成员必须在成员初始化列表中初始化
@@ -148,10 +150,11 @@ x = 10;
 > **标准答案：B**
 
 ---
-
 ### 第9题 - 单选题
 
 有关下列代码，哪一项说法正确
+
+```cpp
 #include <iostream>
 using namespace std;
 class A {
@@ -168,6 +171,7 @@ a.g();
 a.f();
 return 0;
 }
+```
 
 - **A.** 代码可以正常编译并输出两次10
 - **B.** 代码不能通过编译，因为const对象不能调用任何成员函数
@@ -177,10 +181,11 @@ return 0;
 > **标准答案：C**
 
 ---
-
 ### 第10题 - 单选题
 
 下面程序的输出结果是
+
+```cpp
 #include <iostream>
 using namespace std;
 class Counter {
@@ -198,6 +203,7 @@ a.show();
 b.show();
 return 0;
 }
+```
 
 - **A.** 1 1
 - **B.** 1 2
@@ -207,15 +213,17 @@ return 0;
 > **标准答案：C**
 
 ---
-
 ### 第11题 - 单选题
 
 下面程序运行过程中拷贝构造函数一共会被调用几次
+
+```cpp
 #include <iostream>
 using namespace std;
 class A { public: A() {} A(const A& other) { cout << "copy "; } };
 void fun(A x) { A y = x; }
 int main() { A a; fun(a); return 0; }
+```
 
 - **A.** 0
 - **B.** 1
@@ -225,14 +233,16 @@ int main() { A a; fun(a); return 0; }
 > **标准答案：C**
 
 ---
-
 ### 第12题 - 单选题
 
 有关下列代码说法正确的是
+
+```cpp
 #include <iostream>
 using namespace std;
 class A { public: A(int x) {} };
 int main() { A* p = new A[3]; delete[] p; return 0; }
+```
 
 - **A.** 代码可以正常编译，因为new A[3]会自动调用A(int)三次
 - **B.** 代码不能通过编译，因为创建对象数组时需要能够调用默认构造函数
@@ -242,7 +252,6 @@ int main() { A* p = new A[3]; delete[] p; return 0; }
 > **标准答案：B**
 
 ---
-
 ### 第13题 - 单选题
 
 关于C++中的=delete 和=default，下列说法正确的是
@@ -255,10 +264,11 @@ int main() { A* p = new A[3]; delete[] p; return 0; }
 > **标准答案：C**
 
 ---
-
 ### 第14题 - 单选题
 
 下列代码最可能出现的问题是：
+
+```cpp
 #include <iostream>
 #include <cstring>
 using namespace std;
@@ -268,6 +278,7 @@ public: String(const char* s) { data = new char[strlen(s) + 1]; strcpy(data, s);
 ~String() { delete[] data; }
 };
 int main() { String s1("hello"); String s2 = s1; return 0; }
+```
 
 - **A.** 程序一定无法通过编译，因为类中含有指针成员
 - **B.** 程序运行完全安全，因为系统会自动完成深拷贝
@@ -277,15 +288,17 @@ int main() { String s1("hello"); String s2 = s1; return 0; }
 > **标准答案：C**
 
 ---
-
 ### 第15题 - 单选题
 
 以下程序的输出结果是
+
+```cpp
 #include <iostream>
 using namespace std;
 class A { private: int x; public: A(int v) : x(v) {} int get() const { return x; } };
 void show(const A& a) { cout << a.get() << endl; }
 int main() { A a(10); show(a); return 0; }
+```
 
 - **A.** 0
 - **B.** 10
@@ -295,15 +308,17 @@ int main() { A a(10); show(a); return 0; }
 > **标准答案：B**
 
 ---
-
 ### 第16题 - 单选题
 
 以下程序的输出结果是
+
+```cpp
 #include <iostream>
 using namespace std;
 class X { public: X(int v) { cout << v << " "; } };
 class A { private: X x; X y; public: A() : y(2), x(1) {} };
 int main() { A a; return 0; }
+```
 
 - **A.** 1 2
 - **B.** 2 1
@@ -313,14 +328,16 @@ int main() { A a; return 0; }
 > **标准答案：A**
 
 ---
-
 ### 第17题 - 单选题
 
 以下程序的输出结果是
+
+```cpp
 #include <iostream>
 using namespace std;
 class A { public: A() {} A(const A&) { cout << "copy "; } A& operator=(const A&) { cout << "assign "; return *this; } };
 int main() { A a; A b = a; A c; c = a; return 0; }
+```
 
 - **A.** copy assign
 - **B.** assign copy
@@ -330,14 +347,16 @@ int main() { A a; A b = a; A c; c = a; return 0; }
 > **标准答案：A**
 
 ---
-
 ### 第18题 - 单选题
 
 有关以下代码说法正确的是：
+
+```cpp
 #include <iostream>
 using namespace std;
 class A { public: A() = delete; A(int x) {} };
 int main() { A a; A b(10); return 0; }
+```
 
 - **A.** 代码可以正常编译，因为A b(10)合法
 - **B.** 代码不能通过编译，因为类中只要出现=delete就会整体失效
@@ -347,15 +366,17 @@ int main() { A a; A b(10); return 0; }
 > **标准答案：C**
 
 ---
-
 ### 第19题 - 单选题
 
 以下程序的输出结果是
+
+```cpp
 #include <iostream>
 using namespace std;
 class A { private: int x; static int y; public: A(int v) : x(v) {} void setX(int v) { x = v; } static void setY(int v) { y = v; } void show() const { cout << x << " " << y << endl; } };
 int A::y = 0;
 int main() { A a(1), b(2); A::setY(5); a.show(); b.show(); return 0; }
+```
 
 - **A.** 1 0
 - **B.** 1 5
@@ -365,15 +386,17 @@ int main() { A a(1), b(2); A::setY(5); a.show(); b.show(); return 0; }
 > **标准答案：B**
 
 ---
-
 ### 第20题 - 单选题
 
 阅读下列代码。若希望该类在"用一个对象初始化另一个对象"时也能正确工作，最应补充或修改的是哪一项？
+
+```cpp
 #include <iostream>
 #include <cstring>
 using namespace std;
 class String { private: char* data; public: String(const char* s) { data = new char[strlen(s) + 1]; strcpy(data, s); } ~String() { delete[] data; } };
 int main() { String s1("hello"); String s2 = s1; return 0; }
+```
 
 - **A.** 把析构函数删除即可
 - **B.** 把char* data改成int data
